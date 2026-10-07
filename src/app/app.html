@@ -1,0 +1,112 @@
+<div class="container">
+
+  <h1>RabbitMQ - Gestión de Órdenes</h1>
+
+  <p class="subtitle">
+    Envío de órdenes mediante Angular, Spring Boot y RabbitMQ
+  </p>
+
+  <!-- Etapa 10: formulario de órdenes -->
+  <div class="card">
+
+    <h2>Nueva Orden</h2>
+
+    <label for="orderId">ID de la orden</label>
+    <input
+      id="orderId"
+      type="text"
+      placeholder="Ej: ORD-001"
+      [(ngModel)]="orderId"
+    />
+
+    <label for="description">Descripción</label>
+    <textarea
+      id="description"
+      placeholder="Ingrese la descripción de la orden"
+      [(ngModel)]="description"
+    ></textarea>
+
+    <button
+      type="button"
+      (click)="sendOrder()">
+      Enviar Orden
+    </button>
+
+    @if (response(); as response) {
+      <div class="success">
+        <h3>Orden enviada correctamente</h3>
+        <p>
+          <strong>Estado:</strong>
+          {{ response.status }}
+        </p>
+        <p>
+          <strong>Mensaje:</strong>
+          {{ response.message }}
+        </p>
+        <p>
+          <strong>ID de orden:</strong>
+          {{ response.orderId }}
+        </p>
+      </div>
+    }
+
+    @if (errorMessage()) {
+      <div class="error">
+        <strong>Error:</strong>
+        {{ errorMessage() }}
+      </div>
+    }
+
+  </div>
+
+  <!-- Etapa 12: Dashboard -->
+  <div class="dashboard card">
+
+    <h2>Dashboard RabbitMQ</h2>
+
+    <p class="dashboard-subtitle">
+      Métricas del procesamiento de órdenes
+    </p>
+
+    <button
+      type="button"
+      (click)="loadDashboard()">
+      Actualizar Dashboard
+    </button>
+
+    @if (dashboard(); as dashboard) {
+      <div class="metrics">
+
+        <div class="metric-card">
+          <h3>Órdenes procesadas</h3>
+          <p>{{ dashboard.ordersProcessed }}</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>Órdenes con error</h3>
+          <p>{{ dashboard.ordersWithError }}</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>Reintentos</h3>
+          <p>{{ dashboard.retries }}</p>
+        </div>
+
+        <div class="metric-card">
+          <h3>Mensajes en DLQ</h3>
+          <p>{{ dashboard.messagesInDlq }}</p>
+        </div>
+
+      </div>
+    }
+
+    @if (dashboardError()) {
+      <div class="error">
+        <strong>Error:</strong>
+        {{ dashboardError() }}
+      </div>
+    }
+
+  </div>
+
+</div>

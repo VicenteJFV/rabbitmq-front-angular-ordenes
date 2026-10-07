@@ -1,0 +1,112 @@
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.card {
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1976d2;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+.success {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #e8f5e9;
+  color: #1b5e20;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #ffebee;
+  color: #b71c1c;
+}
+
+/* Etapa 12: Dashboard */
+.dashboard {
+  margin-top: 30px;
+}
+
+.dashboard-subtitle {
+  margin: 0;
+  color: #555;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.metric-card {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.metric-card h3 {
+  margin: 0;
+  font-size: 14px;
+}
+
+.metric-card p {
+  margin: 15px 0 0;
+  font-size: 32px;
+  font-weight: bold;
+}
